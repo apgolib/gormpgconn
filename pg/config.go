@@ -13,6 +13,7 @@ type Config struct {
 	MaxOpenConnections int
 	MaxIdleConnections int
 	ConnMaxLifetime    time.Duration
+	Debug              bool
 }
 
 func NewDefaultConfig() Config {
@@ -24,5 +25,6 @@ func NewDefaultConfig() Config {
 		MaxOpenConnections: 10,
 		MaxIdleConnections: 1,
 		ConnMaxLifetime:    30 * time.Second,
+		Debug:              false,
 	}
 }

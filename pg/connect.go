@@ -19,6 +19,10 @@ func Init(db **gorm.DB, cfg Config) {
 		log.Fatalf("failed to connect to database: %v", err)
 	}
 
+	if cfg.Debug {
+		(*db).Debug()
+	}
+
 	sqlDB, err := (*db).DB()
 	if err != nil {
 		log.Fatalf("failed to get sql.DB from gorm.DB: %v", err)
