@@ -20,7 +20,7 @@ func Init(db **gorm.DB, cfg Config) {
 	}
 
 	if cfg.Debug {
-		(*db).Debug()
+		*db = (*db).Debug()
 	}
 
 	sqlDB, err := (*db).DB()
