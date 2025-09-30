@@ -1,6 +1,6 @@
 module github.com/apgolib/gormpgconn
 
-go 1.24.4
+go 1.25.1
 
 require (
 	gorm.io/driver/postgres v1.6.0
