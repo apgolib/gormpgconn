@@ -1,10 +1,10 @@
-package pg
+package clickhouse
 
 import (
 	"fmt"
 	"log"
 
-	"gorm.io/driver/clickhouse"
+	clickhouseDriver "gorm.io/driver/clickhouse"
 	"gorm.io/gorm"
 )
 
@@ -15,7 +15,7 @@ func Init(db **gorm.DB, cfg Config) {
 	)
 
 	var err error
-	*db, err = gorm.Open(clickhouse.Open(dsn), &gorm.Config{})
+	*db, err = gorm.Open(clickhouseDriver.Open(dsn), &gorm.Config{})
 	if err != nil {
 		log.Fatalf("failed to connect to database: %v", err)
 	}
